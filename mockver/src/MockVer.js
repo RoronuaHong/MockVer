@@ -1,10 +1,10 @@
 import './MockVer.css'
-import mainContainer from './components/mainContainer/index'
+import MainContainer from '@/containers/MainContainer/index'
 
 function App() {
   return (
     <div className="App">
-      <mainContainer />
+      <MainContainer />
     </div>
   )
 }

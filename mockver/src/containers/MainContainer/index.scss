@@ -1,0 +1,66 @@
+.application-bar {
+    height: 40px;
+    line-height: 40px;
+    background: #323e52;
+    padding: 0 12px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #99a5be;
+    border-bottom: 1px solid #202735;
+    z-index: 301;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    .left-operation {
+        height: 100%;
+        width: 236px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 236px;
+        flex: 0 0 236px;
+    }
+    .editor-operation {
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1000 auto;
+        flex: 1 1000 auto;
+        height: 100%;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        pointer-events: none;
+        &:hover .dsm-c-rp-icon-tooltip {
+            display: inline-block;
+            margin-left: 50px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            user-select: none;
+            font-size: 16px;
+            outline: none;
+            z-index: 10000;
+            
+            cursor: pointer;
+        }
+    }
+    .dsm-c-rp-icon-tooltip {
+        display: inline-block;
+        margin-left: 50px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        user-select: none;
+        font-size: 16px;
+        outline: none;
+        transition-property: all;
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+    .tooltip-seled {
+        color: #009dff;
+    }
+}
