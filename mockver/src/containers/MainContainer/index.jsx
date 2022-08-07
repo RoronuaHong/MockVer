@@ -1,76 +1,45 @@
 import React, { useState } from 'react'
 
+import LeftPanel from '@/components/LeftPanel'
+import ApplicationBar from '@/components/ApplicationBar'
+
 import './index.scss'
 
+const data = {
+  tooltipArr: [{
+    index: 0,
+    name: `流程图`,
+    title: `流程图模式`
+  }, {
+    index: 1,
+    name: `辅助画板`,
+    title: `添加辅助画板(A)`
+  }, {
+    index: 2,
+    name: `钢笔`,
+    title: `钢笔(P)`
+  }, {
+    index: 3,
+    name: `铅笔`,
+    title: `铅笔`
+  }],
+  redoArr: [{
+    index: 0,
+    name: `撤销`,
+    title: `撤销(CTRL + Z)`
+  }, {
+    index: 1,
+    name: `重做`,
+    title: `重做(CTRL + Y)`
+  }]
+}
+
 const MainContainer = () => {
-  const [isTooltipSeled, setIsTooltipSeled] = useState(false)
-
-  const handleClick = () => {
-    setIsTooltipSeled(isTooltipSeled === true ? false : true)
-
-    console.log(isTooltipSeled)
-  }
-
   return (
-    <div>
-      <div className="application-bar">
-        <div className="left-operation" onClick={handleClick}>
-          仿 Mockplus 部分功能展示
-        </div>
-        {/* <div className="editor-operation"> */}
-          <div className={ 
-            isTooltipSeled === false ? 
-              "dsm-c-rp-icon-tooltip" : 
-              "dsm-c-rp-icon-tooltip tooltip-seled" } 
-            title='流程图模式' 
-            onClick={handleClick}>
-            流程图
-          </div>
-          <div className={ 
-            isTooltipSeled === false ? 
-              "dsm-c-rp-icon-tooltip" : 
-              "dsm-c-rp-icon-tooltip tooltip-seled" } 
-            title='流程图模式' 
-            onClick={handleClick}>
-            辅助画板
-          </div>
-          <div className={ 
-            isTooltipSeled === false ? 
-              "dsm-c-rp-icon-tooltip" : 
-              "dsm-c-rp-icon-tooltip tooltip-seled" }
-            title='流程图模式' 
-            onClick={handleClick}>
-            钢笔
-          </div>
-          <div className={ 
-            isTooltipSeled === false ? 
-            "dsm-c-rp-icon-tooltip" : 
-            "dsm-c-rp-icon-tooltip tooltip-seled" } 
-              title='流程图模式' 
-              onClick={handleClick}>
-            铅笔
-          </div>
-          <div className={ 
-            isTooltipSeled === false ? 
-            "dsm-c-rp-icon-tooltip" : 
-            "dsm-c-rp-icon-tooltip tooltip-seled" } 
-              title='流程图模式' 
-              onClick={handleClick}>
-            撤销
-          </div>
-          <div className={ isTooltipSeled === false ? 
-            "dsm-c-rp-icon-tooltip" : 
-            "dsm-c-rp-icon-tooltip tooltip-seled" } 
-              title='流程图模式' 
-              onClick={handleClick}>
-            重做
-          </div>
-        {/* </div> */}
-        <div className="right-operation">
-          <div className="dsm-c-rp-zoomer">
-
-          </div>  
-        </div>
+    <div className="main-container">
+      <ApplicationBar />
+      <div className="content">
+        <LeftPanel />
       </div>
     </div>
   )

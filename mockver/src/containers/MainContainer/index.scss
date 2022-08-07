@@ -1,3 +1,18 @@
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #181f29;
+}
+.content {
+    display: flex;
+    height: calc(100% - 40px);
+}
+
 .application-bar {
     height: 40px;
     line-height: 40px;
@@ -27,26 +42,8 @@
     }
     .editor-operation {
         display: flex;
-        -webkit-box-flex: 1;
-        -ms-flex: 1 1000 auto;
         flex: 1 1000 auto;
         height: 100%;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        pointer-events: none;
-        &:hover .dsm-c-rp-icon-tooltip {
-            display: inline-block;
-            margin-left: 50px;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            user-select: none;
-            font-size: 16px;
-            outline: none;
-            z-index: 10000;
-            
-            cursor: pointer;
-        }
     }
     .dsm-c-rp-icon-tooltip {
         display: inline-block;
@@ -56,11 +53,29 @@
         user-select: none;
         font-size: 16px;
         outline: none;
+        color: #fff;
         transition-property: all;
         transition-duration: 0.5s;
         cursor: pointer;
     }
     .tooltip-seled {
         color: #009dff;
+    }
+
+    .dsm-c-rp-icon-tooltip-redo {
+        display: inline-block;
+        margin-left: 50px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        user-select: none;
+        font-size: 16px;
+        outline: none;
+        color: #fff;
+        transition-property: all;
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+    .tooltip-disabled {
+        color: #aaa;
     }
 }

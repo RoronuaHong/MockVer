@@ -1,4 +1,4 @@
-import './MockVer.css'
+import './MockVer.scss'
 import MainContainer from '@/containers/MainContainer/index'
 
 function App() {

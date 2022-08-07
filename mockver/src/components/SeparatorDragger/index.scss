@@ -1,0 +1,12 @@
+.separator-dragger {
+  width: 6px;
+  right: 0;
+  -webkit-transform: translateX(4px);
+  transform: translateX(4px);
+  cursor: col-resize;
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 10;
+}
+
