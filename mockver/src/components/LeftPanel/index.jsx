@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Resizable } from "re-resizable"
+import { Resizable } from 're-resizable'
 
 import SeparatorDragger from '@/components/SeparatorDragger'
 
