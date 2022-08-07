@@ -8,9 +8,9 @@ const SeparatorDragger = props => {
   } = props
 
   const handleMouseDown = e => {
-    var e_down = e || window.event
+    // var e_down = e || window.event
     
-    
+
   }
 
   return (
