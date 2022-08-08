@@ -21,6 +21,16 @@
   flex: 1;
   position: relative;
   overflow: auto;
+  .workspace {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    min-height: 100%;
+    min-width: 100%;
+    outline: none;
+    user-select: none;
+  }
 }
 
 .worker-container-status-bar {

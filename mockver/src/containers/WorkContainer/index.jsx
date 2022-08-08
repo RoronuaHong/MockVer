@@ -15,7 +15,10 @@ const WorkContainer = () => {
   return (
     <div className='worker-container'>
       <div className='worker-space-container'>
-        <div id='workspace' className='workspace'>
+        <div id='workspace' 
+          tabIndex='-1'
+          className='workspace'
+          style={{ cursor: `default` }}>
           <RulerCanvasContainer />
           {navSeled && <CurtNavigation />}
         </div>
