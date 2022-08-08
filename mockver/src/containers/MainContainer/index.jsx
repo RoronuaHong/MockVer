@@ -10,9 +10,9 @@ import './index.scss'
 
 const MainContainer = () => {
   return (
-    <div className="main-container">
+    <div className='main-container'>
       <ApplicationBar />
-      <div className="content">
+      <div className='content'>
         <LeftPanel />
         <WorkContainer />
         <RightPanel />
