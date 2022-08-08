@@ -14,7 +14,12 @@ class RulerCanvasWidget extends Component {
   }
 
   componentDidMount() {
-    RulerCanvas(this.canvas)
+    const {
+      mode
+    } = this.props
+
+    // TODO: 添加一个缩放curScale比例数。【添加reactContext】
+    RulerCanvas(this.canvas, mode, 1)
   }
 
   render() {
@@ -26,13 +31,11 @@ class RulerCanvasWidget extends Component {
 
     return (
       <div className='ruler-canvas-container' style={{ width, height, cursor }}>
-        <canvas 
-          width={width} 
-          height={height}
+        <canvas
           ref={this.canvas}
           id={`rulerCanvas`}
-          style={{ width, height }}> 
-          Your browser does not support the canvas element.
+          style={{ width, height }}>
+          Your browser does not support the canvas element。
         </canvas>
       </div>
     )
