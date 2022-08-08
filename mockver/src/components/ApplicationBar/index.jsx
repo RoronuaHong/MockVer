@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+import PanelOperation from '@/components/PanelOperation'
+import RightOperation from '@/components/RightOperation'
+
 import './index.scss'
 
 const data = {
@@ -75,11 +78,8 @@ const ApplicationBar = () => {
           </div>
         ))}
       </div>
-      <div className="right-operation">
-        <div className="dsm-c-rp-zoomer">
-          
-        </div>  
-      </div>
+      <PanelOperation />
+      <RightOperation />
     </div>
   )
 }

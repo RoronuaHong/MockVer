@@ -21,14 +21,24 @@ const LeftPanel = () => {
   }
 
   return (
-    <div className="left-panel">
+    <div className='left-panel'>
       <Resizable
+        minWidth={240}
         maxWidth={700}
-        enable={{ top: false, right: true, bottom: false, left: false, topRight: false, bottomRight: false, bottomLeft: false, topLeft: false }}
+        enable={{ 
+          top: false,
+          right: true,
+          bottom: false,
+          left: false,
+          topRight: false,
+          bottomRight: false,
+          bottomLeft: false,
+          topLeft: false 
+        }}
         onResize={e => onResize(e)}
         onResizeStart={(e) => onResizeStart(e)}
         onResizeStop={(e) => onResizeStop(e)}>
-        <div className="content-panel">
+        <div className='content-panel'>
           ContentPanel
         </div>
       </Resizable>

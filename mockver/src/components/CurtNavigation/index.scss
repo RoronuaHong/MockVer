@@ -1,0 +1,23 @@
+.curt-navigation {
+  width: 224px;
+  height: 160px;
+  border: 1px solid #42516c;
+  background-color: rgba(24,31,41,.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+  right: 16px;
+  bottom: 16px;
+  pointer-events: all;
+  cursor: default;
+}
+

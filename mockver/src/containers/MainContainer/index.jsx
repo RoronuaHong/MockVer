@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
 import LeftPanel from '@/components/LeftPanel'
+import RightPanel from '@/components/RightPanel'
+import WorkContainer from '@/components/WorkContainer'
+
 import ApplicationBar from '@/components/ApplicationBar'
 
 import './index.scss'
@@ -11,6 +14,8 @@ const MainContainer = () => {
       <ApplicationBar />
       <div className="content">
         <LeftPanel />
+        <WorkContainer />
+        <RightPanel />
       </div>
     </div>
   )
