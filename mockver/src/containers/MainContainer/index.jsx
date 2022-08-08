@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import LeftPanel from '@/components/LeftPanel'
 import RightPanel from '@/components/RightPanel'
-import WorkContainer from '@/components/WorkContainer'
+import WorkContainer from '@/containers/WorkContainer'
 
 import ApplicationBar from '@/components/ApplicationBar'
 

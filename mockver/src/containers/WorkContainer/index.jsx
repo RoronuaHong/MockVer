@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import CurtNavigation from '@/components/CurtNavigation'
+import RulerCanvasContainer from '@/containers/RulerCanvasContainer'
 
 import './index.scss'
 
@@ -15,7 +16,7 @@ const WorkContainer = () => {
     <div className='worker-container'>
       <div className='worker-space-container'>
         <div id='workspace' className='workspace'>
-          WorkSpace
+          <RulerCanvasContainer />
           {navSeled && <CurtNavigation />}
         </div>
       </div>
