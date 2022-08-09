@@ -54,9 +54,9 @@ const RulerCanvas = (dom, mode, curScale) => {
   ctx.clearRect(0, 0, w, h)
   ctx.save()
 
-  const offsetX = 1 
-  const offsetY = 1 
-  const scale = 1
+  const offsetX = 0
+  const offsetY = 0
+  const scale = 0.5
   const offset = 'vertical' ? offsetX : offsetY
 
   const sparsity = getSparsity(scale)
@@ -76,13 +76,15 @@ const RulerCanvas = (dom, mode, curScale) => {
       const num = ((offset + index) / pixelPerUnit) * sparsity
   
       if(isCloseToInteger(num / sparsity)) {
-        ctx.moveTo(index, h * 0.5)
+        // ctx.moveTo(index, h * 0.5)
+        ctx.moveTo(index, 0)
         ctx.lineTo(index, h)
   
         const text = num.toFixed(fixed)
         const textWidth = ctx.measureText(text).width
   
-        ctx.fillText(text, index - textWidth / 2, 10)
+        // ctx.fillText(text, index - textWidth / 2, 10)
+        ctx.fillText(text, index + 5, 11)
       } else {
         ctx.moveTo(index, h * 0.7)
         ctx.lineTo(index, h)
@@ -91,13 +93,14 @@ const RulerCanvas = (dom, mode, curScale) => {
       index += gap
     } while(index < w)
   } else {
-    ctx.translate(0, -0.5)
+    ctx.translate(0, 29.5)
 
     do {
       const num = ((offset + index) / pixelPerUnit) * sparsity
   
       if(isCloseToInteger(num / sparsity)) {
-        ctx.moveTo(w * 0.5, index)
+        // ctx.moveTo(w * 0.5, index)
+        ctx.moveTo(0, index)
         ctx.lineTo(w, index)
   
         const text = num.toFixed(fixed)
@@ -107,7 +110,9 @@ const RulerCanvas = (dom, mode, curScale) => {
   
         const textWidth = ctx.measureText(text).width
   
-        ctx.fillText(text, -(index + textWidth / 2), 12)
+        // ctx.fillText(text, -(index + textWidth / 2), 12)
+        ctx.fillText(text, -index + 5, 11)
+
         ctx.rotate((0 * Math.PI) / 180)
         ctx.restore()
       } else {
