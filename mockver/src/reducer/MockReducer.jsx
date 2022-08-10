@@ -1,8 +1,7 @@
 const MockReducer = (state, action) => {
   let mockState = [...state]
 
-  switch(action.type) {
-
+  switch(action.type) {      
     default:
       return state
   }

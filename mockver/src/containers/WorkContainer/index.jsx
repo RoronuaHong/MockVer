@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import CurtNavigation from '@/components/CurtNavigation'
 import RulerCanvasContainer from '@/containers/RulerCanvasContainer'
@@ -11,6 +11,19 @@ const WorkContainer = () => {
   const handleNavSeled = () => {
     setNavSeled(!navSeled)
   }
+
+  const scrollChange = () => {
+    // TODO: 实现卡尺的上下移动【卡尺部分重新实现】。
+    console.log(`鼠标滚动`)
+  }
+
+  useEffect(() => {
+    window.addEventListener('mousewheel', scrollChange, true)
+
+    return () => {
+      window.removeEventListener('mousewheel', scrollChange, false)
+    }
+  }, [])
 
   return (
     <div className='worker-container'>

@@ -41,6 +41,9 @@ const RulerCanvas = (dom, mode, curScale) => {
   canvas.style.width = width + 'px'
   canvas.style.height = height + 'px'
 
+  // 设置偏移量
+  const transitionVal = 24
+
   ctx.beginPath()
   ctx.strokeStyle = '#fff'
   ctx.fillStyle = '#fff'
@@ -56,7 +59,7 @@ const RulerCanvas = (dom, mode, curScale) => {
 
   const offsetX = 0
   const offsetY = 0
-  const scale = 0.5
+  const scale = (curScale / 200) || 0.5
   const offset = 'vertical' ? offsetX : offsetY
 
   const sparsity = getSparsity(scale)
@@ -70,7 +73,7 @@ const RulerCanvas = (dom, mode, curScale) => {
 
   // vertical
   if(mode === `vertical`) {
-    ctx.translate(29.5, 0)
+    ctx.translate(transitionVal, 0)
 
     do {
       const num = ((offset + index) / pixelPerUnit) * sparsity
@@ -89,11 +92,11 @@ const RulerCanvas = (dom, mode, curScale) => {
         ctx.moveTo(index, h * 0.7)
         ctx.lineTo(index, h)
       }
-  
+
       index += gap
     } while(index < w)
   } else {
-    ctx.translate(0, 29.5)
+    ctx.translate(0, transitionVal)
 
     do {
       const num = ((offset + index) / pixelPerUnit) * sparsity
