@@ -122,9 +122,19 @@ const RulerCanvas = (dom, mode, curScale) => {
         ctx.moveTo(w * 0.7, index)
         ctx.lineTo(w, index)
       }
-  
+
       index += gap
     } while(index < h)
+  }
+
+  // 鼠标移动事件
+  canvas.onmousemove = e => {
+    
+  }
+
+  // 鼠标点击事件
+  canvas.onmousedown = e => {
+    
   }
 
 

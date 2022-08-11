@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 
+import GuidesWidget from '@/widgets/GuidesWidget'
 import RulerCanvasWidget from '@/widgets/RulerCanvas'
 
 import './index.scss'
@@ -15,6 +16,11 @@ const RulerCanvasContainer = () => {
             mode={`vertical`}
             cursor={`col-resize`} />
         </div>
+        <GuidesWidget mode={`vertical`} style={{
+          left: `798px`,
+          top: `0px`,
+          visibility: `visible`
+        }} tipVal={90} />
       </div>
       <div className='ruler-guides-container'>
         <div className='ruler' style={{ height: `100%` }}>
@@ -24,6 +30,11 @@ const RulerCanvasContainer = () => {
             mode={`horizontal`}
             cursor={`row-resize`} />
         </div>
+        <GuidesWidget mode={`horizontal`} style={{
+          left: `0px`,
+          top: `302px`,
+          visibility: `visible`
+        }} tipVal={90} />
       </div>
       <div className='rule-corner'>
 
