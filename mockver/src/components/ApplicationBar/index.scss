@@ -1,0 +1,49 @@
+.editor-operation {
+  display: flex;
+  margin-left: 50px;
+  -webkit-box-flex: 1;
+  flex: 1 1000 auto;
+  height: 100%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: flex-start;
+  pointer-events: none;
+}
+
+.dsm-c-rp-icon-tooltip {
+  display: inline-block;
+  min-width: 64px;
+  margin-left: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  user-select: none;
+  font-size: 16px;
+  outline: none;
+  color: #fff;
+  transition-property: all;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.tooltip-seled {
+  color: #009dff;
+}
+
+.dsm-c-rp-icon-tooltip-redo {
+  display: inline-block;
+  min-width: 32px;
+  margin-left: 20px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  user-select: none;
+  font-size: 16px;
+  outline: none;
+  color: #fff;
+  transition-property: all;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.tooltip-disabled {
+  color: #aaa;
+}

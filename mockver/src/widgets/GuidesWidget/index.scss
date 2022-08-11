@@ -15,6 +15,11 @@
 .horizontal {
   width: 100%;
   height: 1px;
+  .graduation-value-tip {
+    top: unset;
+    transform-origin: 0 0;
+    transform: translateY(16px) rotate(-90deg);
+  }
 }
 
 .graduation-value-tip {

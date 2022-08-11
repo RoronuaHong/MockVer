@@ -77,15 +77,16 @@ const RulerCanvas = (dom, mode, curScale) => {
 
     do {
       const num = ((offset + index) / pixelPerUnit) * sparsity
-  
+
       if(isCloseToInteger(num / sparsity)) {
+
         // ctx.moveTo(index, h * 0.5)
         ctx.moveTo(index, 0)
         ctx.lineTo(index, h)
-  
+
         const text = num.toFixed(fixed)
         const textWidth = ctx.measureText(text).width
-  
+
         // ctx.fillText(text, index - textWidth / 2, 10)
         ctx.fillText(text, index + 5, 11)
       } else {
