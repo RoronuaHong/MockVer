@@ -1,11 +1,18 @@
 import React, { useContext } from 'react'
 
 import GuidesWidget from '@/widgets/GuidesWidget'
-import RulerCanvasWidget from '@/widgets/RulerCanvas'
+import { MockContext } from '@/context/MockContext'
+import RulerCanvasWidget from '@/widgets/RulerCanvasWidget'
 
 import './index.scss'
 
 const RulerCanvasContainer = () => {
+  const { mockInfo, setMockInfo } = useContext(MockContext)
+
+  const {
+    tipVal
+  } = mockInfo
+
   return (
     <div className="rule-wrapper" tabIndex={`0`}>
       <div className='ruler-guides-container'>
@@ -20,7 +27,7 @@ const RulerCanvasContainer = () => {
           left: `798px`,
           top: `0px`,
           visibility: `visible`
-        }} tipVal={90} />
+        }} tipVal={tipVal} />
       </div>
       <div className='ruler-guides-container'>
         <div className='ruler' style={{ height: `100%` }}>
@@ -34,7 +41,7 @@ const RulerCanvasContainer = () => {
           left: `0px`,
           top: `302px`,
           visibility: `visible`
-        }} tipVal={90} />
+        }} tipVal={tipVal} />
       </div>
       <div className='rule-corner'>
 

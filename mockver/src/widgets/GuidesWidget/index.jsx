@@ -27,4 +27,3 @@ const GuidesWidget = props => {
 
 export default GuidesWidget
 
-

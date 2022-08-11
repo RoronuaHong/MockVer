@@ -24,10 +24,19 @@ function getFixed(sparsity) {
   return pointIdx < 0 ? 0 : len - pointIdx - 1
 }
 
+
+
 // TODO: 参数:
 //   1. 方向 vertical | horizatal
 //   2. 缩放 scale
-const RulerCanvas = (dom, mode, curScale) => {
+/**
+ * 
+ * @param {*} dom 
+ * @param {*} mode 
+ * @param {*} curScale 
+ * @param {*} mockInfo 
+ */
+const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
   const canvas = dom.current
   const ctx = canvas.getContext('2d')
   
@@ -130,7 +139,10 @@ const RulerCanvas = (dom, mode, curScale) => {
 
   // 鼠标移动事件
   canvas.onmousemove = e => {
-    
+    setMockInfo({
+      ...mockInfo,
+      tipVal: 100
+    })
   }
 
   // 鼠标点击事件

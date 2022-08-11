@@ -27,7 +27,7 @@ const RulerCanvasWidget = props => {
   } = mockInfo
 
   useEffect(() => {
-    RulerCanvas(canvasRef, mode, curScale)
+    RulerCanvas(canvasRef, mode, curScale, mockInfo, setMockInfo)
   })
 
   return (
