@@ -153,6 +153,7 @@ const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
         arr = [
           ...arr,
           {
+            key: `ver-${mockInfo.verLineArr.length}`,
             temp: true,
             top: `0px`,
             left: `798px`

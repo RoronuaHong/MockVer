@@ -17,7 +17,7 @@ const GuidesWidget = props => {
   } = props
 
   return (
-    <div className={temp ? `guides ${mode}` : `guides ${mode} temp`} style={style}>
+    <div className={!temp ? `guides ${mode}` : `guides ${mode} temp`} style={style}>
       <span className='graduation-value-tip'>
         {tipVal}
       </span>

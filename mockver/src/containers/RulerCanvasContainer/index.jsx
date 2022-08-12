@@ -27,14 +27,12 @@ const RulerCanvasContainer = () => {
             mode={`vertical`}
             cursor={`col-resize`} />
         </div>
-        {/* <GuidesWidget mode={`vertical`} style={{
-          left: `798px`,
-          top: `0px`,
-          visibility: `visible`
-        }} tipVal={tipVal} /> */}
         {verLineArr.map(item => {
+          console.log(item.temp)
+
           return (
-            <GuidesWidget 
+            <GuidesWidget
+              key={item.key}
               temp={item.temp}
               mode={`vertical`} 
               style={{
