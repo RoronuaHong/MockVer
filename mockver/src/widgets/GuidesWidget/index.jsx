@@ -10,13 +10,14 @@ import './index.scss'
 
 const GuidesWidget = props => {
   const {
+    temp,
     style,
     tipVal,
     mode = `vertical`
   } = props
 
   return (
-    <div className={`guides ${mode} temp`} style={style}>
+    <div className={temp ? `guides ${mode}` : `guides ${mode} temp`} style={style}>
       <span className='graduation-value-tip'>
         {tipVal}
       </span>

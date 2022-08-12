@@ -53,6 +53,9 @@ const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
   // 设置偏移量
   const transitionVal = 24
 
+  // 是否确定设置参考线
+  let isGuides = false
+
   ctx.beginPath()
   ctx.strokeStyle = '#fff'
   ctx.fillStyle = '#fff'
@@ -139,17 +142,71 @@ const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
 
   // 鼠标移动事件
   canvas.onmousemove = e => {
-    setMockInfo({
-      ...mockInfo,
-      tipVal: 100
-    })
+    let arr = []
+    isGuides = false
+
+    // TODO: 先完成垂直方向的参考线
+    if(mode === `vertical`) {
+      console.log(`鼠标移动`)
+
+      if(mockInfo.verLineArr.length < 1) {
+        arr = [
+          ...arr,
+          {
+            temp: true,
+            top: `0px`,
+            left: `798px`
+          }
+        ]
+
+        const data = {
+          ...mockInfo,
+          tipVal: 100,
+          verLineArr: arr
+        }
+
+        setMockInfo(data)
+      }
+    } else {
+
+    }
   }
 
   // 鼠标点击事件
   canvas.onmousedown = e => {
-    
+    isGuides = true
   }
 
+  // 鼠标移开事件
+  canvas.onmouseleave = e => {
+
+    // TODO: 先删除垂直方向的参考线
+    if(mode === `vertical`) {
+      const resArr = mockInfo.verLineArr
+      
+      resArr.pop()
+
+      if(!isGuides) {
+        setMockInfo({
+          ...mockInfo,
+          verLineArr: resArr
+        })
+      }
+    } else {
+      const resArr = mockInfo.horLineArr
+      
+      resArr.pop()
+
+      if(!isGuides) {
+        setMockInfo({
+          ...mockInfo,
+          horLineArr: resArr
+        })
+      }
+    }
+
+    console.log(`鼠标移开事件`)
+  }
 
   ctx.closePath()
   ctx.stroke()

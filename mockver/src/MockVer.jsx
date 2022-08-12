@@ -6,7 +6,6 @@ import MainContainer from '@/containers/MainContainer/index'
 import { MockContextProvider } from '@/context/MockContext'
 
 function App() {
-
   return (
     <MockContextProvider>
       <Helmet>

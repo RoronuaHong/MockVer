@@ -10,8 +10,12 @@ const RulerCanvasContainer = () => {
   const { mockInfo, setMockInfo } = useContext(MockContext)
 
   const {
-    tipVal
+    tipVal,
+    verLineArr,
+    horLineArr
   } = mockInfo
+
+  console.log(verLineArr.length)
 
   return (
     <div className="rule-wrapper" tabIndex={`0`}>
@@ -23,11 +27,23 @@ const RulerCanvasContainer = () => {
             mode={`vertical`}
             cursor={`col-resize`} />
         </div>
-        <GuidesWidget mode={`vertical`} style={{
+        {/* <GuidesWidget mode={`vertical`} style={{
           left: `798px`,
           top: `0px`,
           visibility: `visible`
-        }} tipVal={tipVal} />
+        }} tipVal={tipVal} /> */}
+        {verLineArr.map(item => {
+          return (
+            <GuidesWidget 
+              temp={item.temp}
+              mode={`vertical`} 
+              style={{
+                left: item.left,
+                top: item.top,
+                visibility: `visible`
+              }} tipVal={tipVal} />
+          )
+        })}
       </div>
       <div className='ruler-guides-container'>
         <div className='ruler' style={{ height: `100%` }}>
@@ -37,11 +53,14 @@ const RulerCanvasContainer = () => {
             mode={`horizontal`}
             cursor={`row-resize`} />
         </div>
-        <GuidesWidget mode={`horizontal`} style={{
+        {/* <GuidesWidget mode={`horizontal`} style={{
           left: `0px`,
           top: `302px`,
           visibility: `visible`
-        }} tipVal={tipVal} />
+        }} tipVal={tipVal} /> */}
+        {horLineArr.map(item => {
+
+        })}
       </div>
       <div className='rule-corner'>
 

@@ -7,7 +7,13 @@ export const MockContext = createContext(null)
 const initialState = []
 
 export const MockContextProvider = ({ children }) => {
-  const [mockInfo, setMockInfo] = useState({})
+  const [mockInfo, setMockInfo] = useState({
+
+    // TODO: 暂时添加相应arr。
+    verLineArr: [],
+    horLineArr: []
+  })
+
   const [mocks, mocksDispatch] = useReducer(MockReducer, initialState)
 
   return (
