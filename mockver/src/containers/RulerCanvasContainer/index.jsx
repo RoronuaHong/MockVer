@@ -21,15 +21,13 @@ const RulerCanvasContainer = () => {
     <div className="rule-wrapper" tabIndex={`0`}>
       <div className='ruler-guides-container'>
         <div className='ruler' style={{ width: `100%` }}>
-          <RulerCanvasWidget
+          <RulerCanvasWidget 
             width={`100%`}
             height={`24px`}
             mode={`vertical`}
             cursor={`col-resize`} />
         </div>
         {verLineArr.map(item => {
-          console.log(item.temp)
-
           return (
             <GuidesWidget
               key={item.key}

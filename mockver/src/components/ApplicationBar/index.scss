@@ -7,13 +7,12 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: flex-start;
-  pointer-events: none;
 }
 
 .dsm-c-rp-icon-tooltip {
   display: inline-block;
   min-width: 64px;
-  margin-left: 20px;
+  margin: 0 2px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   user-select: none;
