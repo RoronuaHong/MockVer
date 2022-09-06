@@ -36,7 +36,7 @@ function getFixed(sparsity) {
  * @param {*} curScale 
  * @param {*} mockInfo 
  */
-const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
+const RulerCanvas = (dom, mode, curScale = 100, mockInfo, setMockInfo) => {
   const canvas = dom.current
   const ctx = canvas.getContext('2d')
   
@@ -71,7 +71,7 @@ const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
 
   const offsetX = 0
   const offsetY = 0
-  const scale = (curScale / 200) || 0.5
+  const scale = curScale / 200
   const offset = 'vertical' ? offsetX : offsetY
 
   const sparsity = getSparsity(scale)
@@ -92,14 +92,12 @@ const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
 
       if(isCloseToInteger(num / sparsity)) {
 
-        // ctx.moveTo(index, h * 0.5)
         ctx.moveTo(index, 0)
         ctx.lineTo(index, h)
 
         const text = num.toFixed(fixed)
-        const textWidth = ctx.measureText(text).width
+        // const textWidth = ctx.measureText(text).width
 
-        // ctx.fillText(text, index - textWidth / 2, 10)
         ctx.fillText(text, index + 5, 11)
       } else {
         ctx.moveTo(index, h * 0.7)
@@ -113,7 +111,7 @@ const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
 
     do {
       const num = ((offset + index) / pixelPerUnit) * sparsity
-  
+
       if(isCloseToInteger(num / sparsity)) {
         // ctx.moveTo(w * 0.5, index)
         ctx.moveTo(0, index)
@@ -147,7 +145,9 @@ const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
 
     // TODO: 先完成垂直方向的参考线
     if(mode === `vertical`) {
-      console.log(`鼠标移动`)
+
+      // 获取当前刻度尺的值
+      // console.log(e.layerX)
 
       if(mockInfo.verLineArr.length < 1) {
         arr = [
@@ -206,7 +206,7 @@ const RulerCanvas = (dom, mode, curScale, mockInfo, setMockInfo) => {
       }
     }
 
-    console.log(`鼠标移开事件`)
+    // console.log(`鼠标移开事件`)
   }
 
   ctx.closePath()

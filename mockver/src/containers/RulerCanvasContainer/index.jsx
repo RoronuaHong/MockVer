@@ -15,7 +15,7 @@ const RulerCanvasContainer = () => {
     horLineArr
   } = mockInfo
 
-  console.log(verLineArr.length)
+  // console.log(verLineArr.length)
 
   return (
     <div className="rule-wrapper" tabIndex={`0`}>

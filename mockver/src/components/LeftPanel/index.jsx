@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Resizable } from 're-resizable'
 
+import PanelBox from '../PanelBox'
+
 import SeparatorDragger from '@/components/SeparatorDragger'
 
 import './index.scss'
@@ -39,7 +41,7 @@ const LeftPanel = () => {
         onResizeStart={(e) => onResizeStart(e)}
         onResizeStop={(e) => onResizeStop(e)}>
         <div className='content-panel'>
-          ContentPanel
+          <PanelBox />
         </div>
       </Resizable>
       {/* <SeparatorDragger handleSetWidth={setWidth} /> */}
